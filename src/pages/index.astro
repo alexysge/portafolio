@@ -1,0 +1,130 @@
+---
+import Layout from '../Layouts/Layout.astro';
+
+// Datos de tus proyectos
+const PROJECTS = [
+  {
+    title: "QA Testing - Validación Masiva",
+    company: "Proyecto Independiente / Académico",
+    description: "Diseño y ejecución de pruebas data-driven en SoapUI 3.6. Automatización de la validación de más de 1,200 registros desde archivos Excel, asegurando la integridad de datos en servicios web.",
+    tags: ["SoapUI", "Excel Automation", "QA Testing"]
+  },
+  {
+    title: "App de Vacunación IMSS",
+    company: "Dirección de Innovación y Desarrollo Tecnológico",
+    description: "Desarrollo de historias de usuario y lógica de negocio para la aplicación oficial de vacunas. Colaboración en el diseño de flujos de usuario críticos bajo metodologías ágiles.",
+    tags: ["Product Owner Support", "User Stories", "Healthcare Tech"]
+  },
+  {
+    title: "Gestión de Cine de Comedia",
+    company: "Proyecto Agile",
+    description: "Implementación de marcos de trabajo Scrum para la gestión de un recinto cultural. Optimización de tiempos de entrega y priorización de backlog.",
+    tags: ["Scrum", "Agile", "Management"]
+  }
+];
+---
+
+<Layout title="Alexys Gómez | Software Engineer & QA">
+  
+  <header class="mb-20 animate-fade-in">
+    <div class="flex items-center gap-4 mb-6">
+      <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono border border-cyan-500/20">
+        Disponible para nuevos retos
+      </span>
+    </div>
+    <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+      Alexys Gómez <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Elizalde</span>
+    </h1>
+    <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
+      Científico de la Computación por la <span class="text-yellow-500 font-medium">UNAM</span>. 
+      Especialista en asegurar la calidad del software y desarrollar soluciones robustas. 
+      Enfocado en <span class="text-slate-200">QA Automation, SQL y metodologías ágiles</span>.
+    </p>
+    
+    <div class="flex flex-wrap gap-4 mt-8">
+      <a href="/cv-alexys.pdf" class="group px-6 py-3 bg-white text-slate-950 font-bold rounded-full transition-all hover:bg-cyan-400 flex items-center gap-2">
+        Descargar CV
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+      </a>
+      <a href="https://github.com/alexysge" class="px-6 py-3 bg-slate-900 border border-slate-800 text-white rounded-full hover:bg-slate-800 transition-all">
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <section class="mb-24">
+    <h2 class="text-sm font-mono text-cyan-500 uppercase tracking-widest mb-8">Tecnologías & Skills</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+        <h3 class="text-white font-bold mb-4">Desarrollo</h3>
+        <ul class="text-slate-400 space-y-2 text-sm">
+          <li>• Python</li>
+          <li>• SQL (Gestión de datos)</li>
+          <li>• Google Cloud Platform</li>
+        </ul>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+        <h3 class="text-white font-bold mb-4">Quality Assurance</h3>
+        <ul class="text-slate-400 space-y-2 text-sm">
+          <li>• SoapUI 3.6 (Web Services)</li>
+          <li>• Data Driven Testing</li>
+          <li>• Pruebas de regresión</li>
+        </ul>
+      </div>
+      <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
+        <h3 class="text-white font-bold mb-4">Agile & Soft Skills</h3>
+        <ul class="text-slate-400 space-y-2 text-sm">
+          <li>• Scrum Methodology</li>
+          <li>• Creación de User Stories</li>
+          <li>• Comunicación Técnica</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="text-sm font-mono text-cyan-500 uppercase tracking-widest mb-8">Experiencia Destacada</h2>
+    <div class="space-y-6">
+      {PROJECTS.map(project => (
+        <div class="group p-8 rounded-3xl bg-slate-900/30 border border-slate-800/50 hover:bg-slate-900/50 hover:border-cyan-500/30 transition-all duration-300">
+          <div class="flex flex-col md:flex-row justify-between mb-4 gap-2">
+            <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{project.title}</h3>
+            <span class="text-slate-500 font-mono text-sm">{project.company}</span>
+          </div>
+          <p class="text-slate-400 leading-relaxed mb-6">
+            {project.description}
+          </p>
+          <div class="flex flex-wrap gap-2">
+            {project.tags.map(tag => (
+              <span class="px-3 py-1 rounded-md bg-slate-950 text-slate-400 text-xs border border-slate-800">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-24 p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 border border-cyan-500/20">
+    <h2 class="text-xl font-bold text-white mb-4">Fuera de la terminal...</h2>
+    <p class="text-slate-400">
+      Apasionado por el <span class="text-cyan-400">Arte Generativo</span> y el diseño de posters. 
+      Cuando no estoy validando servicios web, probablemente me encuentres explorando el mundo de Pokémon 
+      o experimentando con nuevas herramientas de IA.
+    </p>
+  </section>
+
+</Layout>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out forwards;
+  }
+</style>

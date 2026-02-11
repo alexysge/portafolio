@@ -1,0 +1,32 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Portafolio Profesional de Alexys Gómez" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body class="bg-slate-950 text-slate-200 selection:bg-cyan-500/30">
+		<div class="fixed inset-0 -z-10 h-full w-full bg-[radial-gradient(#ffffff10_1px,transparent_1px)] [background-size:20px_20px]"></div>
+		
+		<main class="max-w-4xl mx-auto px-6 py-12 md:py-24">
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+		font-family: system-ui, sans-serif;
+	}
+</style>
