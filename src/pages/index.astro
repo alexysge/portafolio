@@ -4,22 +4,38 @@ import Layout from '../Layouts/Layout.astro';
 // Datos de tus proyectos
 const PROJECTS = [
   {
-    title: "QA Testing - Validación Masiva",
-    company: "Proyecto Servicio Social / Dirección de Innovación y Desarrollo Tecnológico",
-    description: "Diseño y ejecución de pruebas data-driven en SoapUI 3.6. Automatización de la validación de más de 1,200 registros desde archivos Excel, asegurando la integridad de datos en servicios web.",
-    tags: ["SoapUI", "Excel Automation", "QA Testing"]
-  },
-  {
-    title: "Prototipo de App de Vacunación IMSS",
+    title: "Prototipo de Cartilla de Vacunación Digital IMSS",
     company: "Dirección de Innovación y Desarrollo Tecnológico",
     description: "Desarrollo de historias de usuario y lógica de negocio para la aplicación oficial de vacunas. Colaboración en el diseño de flujos de usuario críticos bajo metodologías ágiles.",
-    tags: ["Product Owner Support", "User Stories", "Healthcare Tech"]
+    tags: ["Product Owner Support", "User Stories", "Healthcare Tech"],
+    link: "https://github.com/alexysge/Cartilla-Digital" 
   },
   {
-    title: "Gestión de Cine de Comedia",
-    company: "Proyecto Agile",
-    description: "Implementación de marcos de trabajo Scrum para la gestión de un recinto cultural. Optimización de tiempos de entrega y priorización de backlog. Uso de Astro como framework",
-    tags: ["Scrum", "Agile", "Management"]
+    title: "QA Testing - Validación Masiva",
+    company: "Proyecto Servicio Social / Dirección de Innovación y Desarrollo Tecnológico",
+    description: "Diseño y ejecución de pruebas data-driven en SoapUI 3.6. Automatización de la validación de más de 1,200 registros desde archivos Excel, asegurando la integridad de datos en servicios web. ",
+    tags: ["SoapUI", "Excel", "QA Testing"]
+  },
+  {
+    title: "Repair Wars",
+    company: "Global Game Jam 2020", 
+    description: "Rol híbrido de Developer y QA en evento de 72h. Ejecución de pruebas funcionales intensivas, identificación de bugs críticos en mecánicas de juego y documentación de feedback para pulir la experiencia de usuario (UX). Uso de C# para la programación de las mecánicas.",
+    tags: ["Game Testing", "Bug Tracking", "Teamwork"],
+    link: "https://github.com/ivarog/Repair-Wars"   
+  },
+  {
+    title: "Pingu Clicker",
+    company: "Proyecto Personal (Godot)",
+    description: "Desarrollo full-cycle de un juego incremental. Implementación de lógica de progresión y recursos. Aplicación rigurosa de pruebas de regresión y testing manual para asegurar la estabilidad tras cada actualización.",
+    tags: ["Godot Engine", "Regression Testing", "Game Logic"],
+    link: "https://github.com/alexysge/PinwiCome" 
+  },
+  {
+    title: "Gestión y Diseño Web de un Cine de Comedia",
+    company: "Proyecto Agile / Proyecto Escolar",
+    description: "Implementación de marcos de trabajo Scrum para la gestión de un apartado web de cine de comedia. Optimización de tiempos de entrega y priorización de backlog. Diseño de interfaces y experiencia de usuario. Uso de Astro como framework",
+    tags: ["Scrum", "Agile", "UX/UI"],
+    link: "https://github.com/Diana-Matu/IS_CodeFlix_Comedia" 
   }
 ];
 ---
@@ -28,12 +44,12 @@ const PROJECTS = [
   
   <header class="mb-20 animate-fade-in">
     <div class="flex items-center gap-4 mb-6">
-      <span class="px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-mono border border-cyan-500/20">
+      <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-mono border border-purple-500/20">
         Disponible para nuevos retos
       </span>
     </div>
     <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Alexys Gómez Elizalde</span>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-800">Alexys Gómez Elizalde</span>
     </h1>
     <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
       Científico de la Computación por la <span class="text-yellow-500 font-medium">UNAM</span>. 
@@ -41,25 +57,48 @@ const PROJECTS = [
       Enfocado en <span class="text-slate-200">QA Automation, SQL y metodologías ágiles</span>.
     </p>
     
-    <div class="flex flex-wrap gap-4 mt-8">
-      <a 
-          href="/portafolio/cv-alexys.pdf" 
-          download="CV-Alexys-Gomez.pdf"
-          class="group px-6 py-3 bg-white text-slate-950 font-bold rounded-full transition-all hover:bg-cyan-400 flex items-center gap-2"
-        >
-            Descargar CV
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+    <div class="flex flex-wrap items-center gap-4 mt-8">
+      <a href="/cv-alexys.pdf" download class="group px-6 py-3 bg-white text-slate-950 font-bold rounded-full transition-all hover:bg-purple-400 flex items-center gap-2">
+        Descargar CV
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+      </a>
+
+      <div class="h-8 w-px bg-slate-800 mx-2 hidden md:block"></div>
+
+      <div class="flex gap-3">
+        
+        <a href="https://github.com/alexysge" target="_blank" class="p-3 rounded-full border border-slate-800 bg-slate-900/50 text-white hover:bg-white hover:text-slate-900 hover:scale-110 transition-all duration-300" aria-label="GitHub">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+          </svg>
+        </a>
+
+        <a href="https://www.linkedin.com/in/alexysge" target="_blank" class="p-3 rounded-full border border-slate-800 bg-slate-900/50 text-white hover:bg-[#0077b5] hover:text-white hover:scale-110 transition-all duration-300" aria-label="LinkedIn">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
             </svg>
         </a>
-      <a href="https://github.com/alexysge" class="px-6 py-3 bg-slate-900 border border-slate-800 text-white rounded-full hover:bg-slate-800 transition-all">
-        GitHub
-      </a>
+
+        <a href="mailto:alexyselizalde@gmail.com" class="p-3 rounded-full border border-slate-800 bg-slate-900/50 text-white hover:bg-[#EA4335] hover:text-white hover:scale-110 transition-all duration-300" aria-label="Email">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+        </a>
+        
+        <a href="https://t.me/alexysge" target="_blank" class="p-3 rounded-full border border-slate-800 bg-slate-900/50 text-white hover:bg-[#229ED9] hover:text-white hover:scale-110 transition-all duration-300" aria-label="Telegram">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.68 0zm6.85 6.845l-2.427 11.456c-.18.815-.665 1.018-1.35.633l-3.737-2.756-1.803 1.737c-.2.2-.367.367-.753.367l.27-3.805 6.924-6.257c.301-.267-.066-.415-.467-.149l-8.56 5.39-3.692-1.154c-.803-.25-.818-.802.168-1.188l14.43-5.562c.668-.25 1.25.167 1.147 1.288z"/>
+            </svg>
+        </a>
+
+      </div>
     </div>
   </header>
 
   <section class="mb-24">
-    <h2 class="text-sm font-mono text-cyan-500 uppercase tracking-widest mb-8">Tecnologías & Skills</h2>
+    <h2 class="text-sm font-mono text-purple-500 uppercase tracking-widest mb-8">Tecnologías & Skills</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800">
         <h3 class="text-white font-bold mb-4">Desarrollo</h3>
@@ -89,33 +128,49 @@ const PROJECTS = [
   </section>
 
   <section>
-    <h2 class="text-sm font-mono text-cyan-500 uppercase tracking-widest mb-8">Experiencia Destacada</h2>
+    <h2 class="text-sm font-mono text-purple-500 uppercase tracking-widest mb-8">Experiencia Destacada</h2>
     <div class="space-y-6">
       {PROJECTS.map(project => (
-        <div class="group p-8 rounded-3xl bg-slate-900/30 border border-slate-800/50 hover:bg-slate-900/50 hover:border-cyan-500/30 transition-all duration-300">
+        <div class="group p-8 rounded-3xl bg-slate-900/30 border border-slate-800/50 hover:bg-slate-900/50 hover:border-purple-500/30 transition-all duration-300">
+          
           <div class="flex flex-col md:flex-row justify-between mb-4 gap-2">
-            <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">{project.title}</h3>
+            <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">{project.title}</h3>
             <span class="text-slate-500 font-mono text-sm">{project.company}</span>
           </div>
+
           <p class="text-slate-400 leading-relaxed mb-6">
             {project.description}
           </p>
-          <div class="flex flex-wrap gap-2">
-            {project.tags.map(tag => (
-              <span class="px-3 py-1 rounded-md bg-slate-950 text-slate-400 text-xs border border-slate-800">
-                {tag}
-              </span>
-            ))}
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 border-t border-slate-800/50 pt-4">
+            
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map(tag => (
+                <span class="px-3 py-1 rounded-md bg-slate-950 text-slate-400 text-xs border border-slate-800">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            {project.link && (
+              <a href={project.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-purple-400 hover:text-white transition-colors group/link">
+                <span>Ver Código</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            )}
+            
           </div>
         </div>
       ))}
     </div>
   </section>
 
-  <section class="mt-24 p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 border border-cyan-500/20">
+  <section class="mt-24 p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-purple-500/20">
     <h2 class="text-xl font-bold text-white mb-4">Fuera de la terminal...</h2>
     <p class="text-slate-400">
-      Apasionado por el <span class="text-cyan-400">Arte Generativo</span> y la innovación tecnológica. 
+      Apasionado por el <span class="text-purple-400">Arte Generativo</span> y la innovación tecnológica. 
       Cuando no estoy validando servicios web, probablemente me encuentres capturando algún Pokémon 
       o experimentando con nuevas herramientas de IA.
     </p>
