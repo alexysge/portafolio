@@ -4,47 +4,48 @@ import Layout from '../Layouts/Layout.astro';
 // Datos de tus proyectos
 const PROJECTS = [
   {
-    title: "Prototipo de Cartilla de Vacunación Digital IMSS",
-    company: "Dirección de Innovación y Desarrollo Tecnológico",
-    description: "Desarrollo de historias de usuario y lógica de negocio para la aplicación oficial de vacunas. Colaboración en el diseño de flujos de usuario críticos bajo metodologías ágiles.",
+    title: "IMSS Digital Vaccination Card Prototype",
+    company: "Technology Innovation and Development Directorate",
+    description: "Development of user stories and business logic for the official vaccination application. Collaboration in designing critical user flows under agile methodologies.",
     tags: ["Product Owner Support", "User Stories", "Healthcare Tech"],
-    link: "https://github.com/alexysge/Cartilla-Digital" 
+    link: "https://github.com/alexysge/Cartilla-Digital"
   },
   {
-    title: "QA Testing - Validación Masiva",
-    company: "Proyecto Servicio Social / Dirección de Innovación y Desarrollo Tecnológico",
-    description: "Diseño y ejecución de pruebas data-driven en SoapUI 3.6. Automatización de la validación de más de 1,200 registros desde archivos Excel, asegurando la integridad de datos en servicios web. ",
+    title: "QA Testing – Mass Validation",
+    company: "Social Service Project / Technology Innovation Directorate",
+    description: "Design and execution of data-driven testing using SoapUI 3.6. Automated validation of over 1,200 Excel records, ensuring web service data integrity.",
     tags: ["SoapUI", "Excel", "QA Testing"]
   },
-    {
-    title: "Optimización de Portafolios de Inversión",
-    company: "Proyecto Escolar / Cómputo Evolutivo",
-    description: "Implementación del algoritmo Cuckoo Search en Python para la toma de decisiones financieras. Análisis de convergencia para maximizar retornos y diversificar riesgos bajo restricciones de mercado complejas.",
-    tags: ["Python", "Metaheuristicas", "AI"],
+  {
+    title: "Investment Portfolio Optimization",
+    company: "Academic Project / Evolutionary Computing",
+    description: "Implementation of the Cuckoo Search algorithm in Python for financial decision-making. Convergence analysis to maximize returns and diversify risk under complex constraints.",
+    tags: ["Python", "Metaheuristics", "AI"],
     link: "https://github.com/alexysge/Proyecto-Final-Comp-Evolutivo"
   },
   {
     title: "Repair Wars",
-    company: "Global Game Jam 2020", 
-    description: "Rol híbrido de Developer y QA en evento de 72h. Ejecución de pruebas funcionales intensivas, identificación de bugs críticos en mecánicas de juego y documentación de feedback para pulir la experiencia de usuario (UX). Uso de C# para la programación de las mecánicas.",
+    company: "Global Game Jam 2020",
+    description: "Hybrid Developer and QA role in a 72-hour event. Intensive functional testing, identification of critical gameplay bugs, and documentation of feedback to refine user experience. Gameplay mechanics programmed in C#.",
     tags: ["Game Testing", "Bug Tracking", "Teamwork"],
-    link: "https://github.com/ivarog/Repair-Wars"   
+    link: "https://github.com/ivarog/Repair-Wars"
   },
   {
     title: "Pingu Clicker",
-    company: "Proyecto Personal (Godot)",
-    description: "Desarrollo full-cycle de un juego incremental. Implementación de lógica de progresión y recursos. Aplicación rigurosa de pruebas de regresión y testing manual para asegurar la estabilidad tras cada actualización.",
+    company: "Personal Project (Godot)",
+    description: "Full-cycle development of an incremental game. Implementation of progression systems and resource logic. Rigorous regression and manual testing to maintain stability after each update.",
     tags: ["Godot Engine", "Regression Testing", "Game Logic"],
-    link: "https://github.com/alexysge/PinwiCome" 
+    link: "https://github.com/alexysge/PinwiCome"
   },
   {
-    title: "Gestión y Diseño Web de un Cine de Comedia",
-    company: "Proyecto Agile / Proyecto Escolar",
-    description: "Implementación de marcos de trabajo Scrum para la gestión de un apartado web de cine de comedia. Optimización de tiempos de entrega y priorización de backlog. Diseño de interfaces y experiencia de usuario. Uso de Astro como framework",
+    title: "Comedy Cinema Web Management & Design",
+    company: "Agile Academic Project",
+    description: "Application of Scrum frameworks to manage a comedy cinema web section. Delivery optimization, backlog prioritization, and UX/UI design using Astro.",
     tags: ["Scrum", "Agile", "UX/UI"],
-    link: "https://github.com/Diana-Matu/IS_CodeFlix_Comedia" 
+    link: "https://github.com/Diana-Matu/IS_CodeFlix_Comedia"
   }
 ];
+
 ---
 
 <Layout title="Alexys Gómez | Software Engineer & QA">
@@ -52,26 +53,26 @@ const PROJECTS = [
   <header class="mb-20 animate-fade-in">
     <div class="flex items-center gap-4 mb-6">
       <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-xs font-mono border border-purple-500/20">
-        Disponible para nuevos retos
+        Available for new challenges
       </span>
     </div>
     <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
       <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-purple-800">Alexys Gómez Elizalde</span>
     </h1>
     <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
-      Científico de la Computación por la <span class="text-yellow-500 font-medium">UNAM</span>. 
-      Especialista en asegurar la calidad del software y desarrollar soluciones robustas. 
-      Enfocado en <span class="text-slate-200">QA Automation, SQL y metodologías ágiles</span>.
+      Computer Science graduate from <span class="text-yellow-500 font-medium">UNAM</span>.  
+      Specialized in software quality assurance and building robust solutions.  
+      Focused on <span class="text-slate-200">QA Automation, SQL, and agile methodologies</span>.
     </p>
     
-      <div class="flex flex-wrap items-center gap-4 mt-8">
+    <div class="flex flex-wrap items-center gap-4 mt-8">
         <a href="/cv-alexys.pdf" download 
           class="group relative px-6 py-3 bg-white text-slate-950 font-bold rounded-full 
                   transition-all duration-300 ease-out 
                   hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] hover:bg-purple-10 
                   flex items-center gap-2">
             <span class="relative z-10 flex items-center gap-2">
-                Descargar CV
+                Download CV
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 group-hover:translate-y-1 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
@@ -130,8 +131,8 @@ const PROJECTS = [
     </div>
   </header>
 
-    <section class="mb-24">
-      <h2 class="text-sm font-mono text-purple-500 uppercase tracking-widest mb-8">Stack Tecnológico</h2>
+  <section class="mb-24">
+      <h2 class="text-sm font-mono text-purple-500 uppercase tracking-widest mb-8">Technology Stack</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
@@ -140,7 +141,7 @@ const PROJECTS = [
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
-            Desarrollo & QA
+            Development & QA
           </h3>
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Python</span>
@@ -156,7 +157,7 @@ const PROJECTS = [
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0z" />
             </svg>
-            Workflow & Herramientas
+            Workflow & Tools
           </h3>
           <div class="flex flex-wrap gap-2">
             <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Jira</span>
@@ -201,7 +202,7 @@ const PROJECTS = [
 
             {project.link && (
               <a href={project.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-purple-400 hover:text-white transition-colors group/link">
-                <span>Ver Código</span>
+                <span>View Code</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
@@ -215,16 +216,16 @@ const PROJECTS = [
   </section>
 
   <section class="mt-24 p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-purple-500/20">
-    <h2 class="text-xl font-bold text-white mb-4">Fuera de la terminal...</h2>
+    <h2 class="text-xl font-bold text-white mb-4">Outside the terminal...</h2>
     <p class="text-slate-400">
-      Me motiva crear proyectos propios y entender cómo funcionan las cosas por dentro. Desarrollo juegos, 
-      experimento con nuevas tecnologías y disfruto analizar sistemas con mentalidad crítica. También encuentro 
-      inspiración en los videojuegos y en los mundos futuristas que combinan creatividad con lógica.
+      I’m driven to build my own projects and understand how things work under the hood. 
+      I develop games, experiment with new technologies, and enjoy analyzing systems with a critical mindset. 
+      I also find inspiration in video games and futuristic worlds that blend creativity with logic.
     </p>
   </section>
 
-  <a href="/portafolio/en" class="fixed top-6 right-6 z-50 px-4 py-2 rounded-full bg-slate-900/80 border border-purple-500/50 text-purple-400 font-bold backdrop-blur-sm hover:bg-purple-600 hover:text-white hover:scale-105 transition-all shadow-[0_0_15px_rgba(168,85,247,0.3)]">
-    EN
+  <a href="/portafolio/" class="fixed top-6 right-6 z-50 px-4 py-2 rounded-full bg-slate-900/80 border border-purple-500/50 text-purple-400 font-bold backdrop-blur-sm hover:bg-purple-600 hover:text-white hover:scale-105 transition-all shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+    ES
   </a>
 
 </Layout>
