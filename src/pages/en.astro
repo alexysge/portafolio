@@ -1,5 +1,7 @@
 ---
 import Layout from '../Layouts/Layout.astro';
+import Certifications from '../components/Certifications.astro';
+
 
 // Datos de tus proyectos
 const PROJECTS = [
@@ -46,6 +48,36 @@ const PROJECTS = [
   }
 ];
 
+const CERTS = [
+  {
+    title: "Video Game Design",
+    issuer: "Universitat Autònoma de Barcelona",
+    date: "July 1, 2020",
+    file: "/portafolio/CertificadodeVideojuegos2.pdf",
+    description: "Course focused on the fundamentals of video game design, mechanics, and narrative."
+  },
+  {
+    title: "Video Games: What are we talking about?",
+    issuer: "Universitat Autònoma de Barcelona",
+    date: "May 2, 2020",
+    file: "/portafolio/Coursera Z6T8BKNSTMD6.pdf",
+    description: "Analysis of the nature, impact, and fundamental concepts of the video game industry."
+  },
+  {
+    title: "Technical Support Fundamentals",
+    issuer: "Grow with Google",
+    date: "June 6, 2020",
+    file: "/portafolio/CreceConGoogleITSupport.pdf",
+    description: "Fundamentals of IT technical support, hardware, software, and customer service."
+  },
+  {
+    title: "Introduction to Unity Editor 2019",
+    issuer: "Master Devs",
+    date: "May 11, 2020",
+    file: "/portafolio/certificate-of-completion-for-introduccion-a-unity-editor-2019.pdf",
+    description: "Certificate of completion for the introduction to the Unity development engine vers. 2019."
+  }
+];
 ---
 
 <Layout title="Alexys Gómez | Software Engineer & QA">
@@ -214,6 +246,14 @@ const PROJECTS = [
       ))}
     </div>
   </section>
+
+  <Certifications 
+    certs={CERTS} 
+    titleLabel="Certifications" 
+    showLabel="View Certifications" 
+    hideLabel="Hide Certifications" 
+  />
+
 
   <section class="mt-24 p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-purple-500/20">
     <h2 class="text-xl font-bold text-white mb-4">Outside the terminal...</h2>

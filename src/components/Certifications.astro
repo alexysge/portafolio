@@ -1,0 +1,155 @@
+---
+// src/components/Certifications.astro
+interface Cert {
+  title: string;
+  issuer: string;
+  date: string;
+  file: string;
+  description: string;
+}
+
+interface Props {
+  certs: Cert[];
+  titleLabel?: string;
+  hideLabel?: string;
+  showLabel?: string;
+}
+
+const { 
+  certs, 
+  titleLabel = "Certificaciones", 
+  hideLabel = "Ocultar Certificaciones", 
+  showLabel = "Ver Certificaciones" 
+} = Astro.props;
+---
+
+<section class="mt-12 text-center">
+  <button
+    id="toggle-certs"
+    class="group relative px-8 py-3 bg-slate-900 border border-purple-500/50 text-purple-400 font-bold rounded-full 
+           transition-all duration-300 ease-out 
+           hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:bg-purple-900/20 
+           flex items-center gap-3 mx-auto"
+  >
+    <span class="relative z-10 flex items-center gap-2" data-show={showLabel} data-hide={hideLabel}>
+      {showLabel}
+      <svg id="chevron-icon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </span>
+  </button>
+
+  <div id="certs-container" class="hidden mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 opacity-0 translate-y-4 transition-all duration-500 ease-out">
+    {certs.map(cert => (
+      <div class="group p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 transition-all text-left">
+        <div class="relative overflow-hidden rounded-xl mb-4 cursor-pointer cert-image-trigger bg-slate-800 flex items-center justify-center h-48" data-file={cert.file} data-title={cert.title}>
+            <div class="flex flex-col items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-purple-500/50 group-hover:text-purple-400 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <span class="text-xs font-mono text-slate-500 group-hover:text-slate-300 transition-colors">PDF</span>
+            </div>
+            <div class="absolute inset-0 bg-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                <span class="px-4 py-2 bg-purple-600 text-white rounded-full text-sm font-bold shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">
+                    Ver Certificado
+                </span>
+            </div>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-1">{cert.title}</h3>
+        <p class="text-purple-400 text-sm mb-2">{cert.issuer} • {cert.date}</p>
+        <p class="text-slate-400 text-sm leading-relaxed">{cert.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="cert-modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 bg-slate-950/95 backdrop-blur-md opacity-0 transition-opacity duration-300">
+  <div class="relative w-full h-full max-w-5xl flex flex-col items-center">
+    <button id="close-modal" class="absolute -top-1 right-0 sm:-right-4 p-2 text-white hover:text-purple-400 transition-colors z-[110]" aria-label="Cerrar modal">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <div class="w-full h-full bg-slate-900 rounded-xl overflow-hidden shadow-2xl mt-8">
+        <iframe id="modal-iframe" src="" class="w-full h-full border-none"></iframe>
+    </div>
+    <h3 id="modal-title" class="text-white text-xl font-bold mt-4 mb-2"></h3>
+  </div>
+</div>
+
+<script>
+  const toggleBtn = document.getElementById('toggle-certs');
+  const certsContainer = document.getElementById('certs-container');
+  const chevronIcon = document.getElementById('chevron-icon');
+  const toggleText = toggleBtn?.querySelector('span');
+  
+  const modal = document.getElementById('cert-modal');
+  const modalIframe = document.getElementById('modal-iframe') as HTMLIFrameElement;
+  const modalTitle = document.getElementById('modal-title');
+  const closeModal = document.getElementById('close-modal');
+  const certTriggers = document.querySelectorAll('.cert-image-trigger');
+
+  // Toggle Certifications
+  toggleBtn?.addEventListener('click', () => {
+    const isHidden = certsContainer?.classList.contains('hidden');
+    const showMsg = toggleText?.getAttribute('data-show') || 'Ver Certificaciones';
+    const hideMsg = toggleText?.getAttribute('data-hide') || 'Ocultar Certificaciones';
+    
+    if (isHidden) {
+      certsContainer?.classList.remove('hidden');
+      setTimeout(() => {
+        certsContainer?.classList.remove('opacity-0', 'translate-y-4');
+        certsContainer?.classList.add('opacity-100', 'translate-y-0');
+        chevronIcon?.classList.add('rotate-180');
+      }, 10);
+      if (toggleText) toggleText.childNodes[0].textContent = hideMsg + ' ';
+    } else {
+      certsContainer?.classList.add('opacity-0', 'translate-y-4');
+      certsContainer?.classList.remove('opacity-100', 'translate-y-0');
+      chevronIcon?.classList.remove('rotate-180');
+      setTimeout(() => {
+        certsContainer?.classList.add('hidden');
+      }, 500);
+      if (toggleText) toggleText.childNodes[0].textContent = showMsg + ' ';
+    }
+  });
+
+  // Modal Logic
+  certTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const fileUrl = trigger.getAttribute('data-file');
+      const title = trigger.getAttribute('data-title');
+      
+      if (modal && modalIframe && modalTitle) {
+        modalIframe.src = fileUrl || '';
+        modalTitle.textContent = title || '';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          modal.classList.add('opacity-100');
+        }, 10);
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  const hideModal = () => {
+    if (modal) {
+      modal.classList.add('opacity-0');
+      modal.classList.remove('opacity-100');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        if (modalIframe) modalIframe.src = '';
+        document.body.style.overflow = '';
+      }, 300);
+    }
+  };
+
+  closeModal?.addEventListener('click', hideModal);
+  modal?.addEventListener('click', (e) => {
+    if (e.target === modal) hideModal();
+  });
+</script>
