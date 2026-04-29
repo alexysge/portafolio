@@ -1,19 +1,39 @@
 ---
 interface Props {
 	title: string;
+	lang?: string;
+	description?: string;
 }
 
-const { title } = Astro.props;
+const { 
+	title, 
+	lang = "es", 
+	description = "Portafolio Profesional de Alexys Gómez - Software Engineer & QA Specialist" 
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Portafolio Profesional de Alexys Gómez" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/portafolio/favicon.svg" />
 		<title>{title}</title>
+
+		<!-- SEO / OpenGraph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/portafolio/og-image.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content="/portafolio/og-image.png" />
 	</head>
 	<body class="bg-[#0a051e] text-slate-200 selection:bg-purple-500/30">
 		<div class="fixed inset-0 -z-10 h-full w-full bg-[radial-gradient(#7c3aed33_1px,transparent_1px)] [background-size:20px_20px]"></div>

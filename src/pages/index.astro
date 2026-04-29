@@ -57,6 +57,13 @@ const PROJECTS = [
 
 const CERTS = [
   {
+    title: "Scrum Fundamentals Certified (SFC™)",
+    issuer: "SCRUMstudy",
+    date: "05.06.2024",
+    file: "/portafolio/scrum.pdf",
+    description: "Certificación en los principios y metodologías de Scrum para la gestión ágil de proyectos."
+  },
+  {
     title: "Diseño de videojuegos",
     issuer: "Universitat Autònoma de Barcelona",
     date: "01.07.2020",
@@ -87,7 +94,11 @@ const CERTS = [
 ];
 ---
 
-<Layout title="Alexys Gómez | Software Engineer & QA">
+<Layout 
+  title="Alexys Gómez | Software Engineer & QA"
+  lang="es"
+  description="Portafolio profesional de Alexys Gómez. Ingeniero de Software y especialista en QA con enfoque en automatización, SQL y metodologías ágiles."
+>
   
   <header class="mb-20 animate-fade-in">
     <div class="flex items-center gap-4 mb-6">
@@ -106,6 +117,7 @@ const CERTS = [
     
       <div class="flex flex-wrap items-center gap-4 mt-8">
         <a href="/portafolio/cv-alexys.pdf" download 
+          aria-label="Descargar currículum de Alexys Gómez en formato PDF"
           class="group relative px-6 py-3 bg-white text-slate-950 font-bold rounded-full 
                   transition-all duration-300 ease-out 
                   hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] hover:bg-purple-10 
@@ -177,7 +189,7 @@ const CERTS = [
         
         <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 transition-colors">
           <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
             </svg>
             Desarrollo & QA
@@ -242,7 +254,7 @@ const CERTS = [
             {project.link && (
               <a href={project.link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-purple-400 hover:text-white transition-colors group/link">
                 <span>Ver Código</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
               </a>
