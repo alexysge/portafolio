@@ -4,7 +4,30 @@ import Certifications from '../components/Certifications.astro';
 
 
 // Datos de tus proyectos
-const PROJECTS = [
+interface Project {
+  title: string;
+  company: string;
+  date?: string;
+  location?: string;
+  description?: string;
+  bullets?: string[];
+  tags: string[];
+  link?: string;
+}
+
+const PROJECTS: Project[] = [
+  {
+    title: "Especialista en Operación y Optimización de Live Streaming",
+    company: "Red Marine",
+    date: "Abril 2026 - Julio 2026",
+    location: "CDMX, México",
+    bullets: [
+      "Operación y gestión técnica de transmisiones de live streaming integradas con e-commerce, asegurando la continuidad de las sesiones y una experiencia de compra fluida.",
+      "Administración y operación de TikTok Console y TikTok Studio para la configuración, monitoreo y ejecución técnica de transmisiones en vivo.",
+      "Establecimiento de récords de ventas en dos cuentas de TikTok mediante la optimización de la operación de las transmisiones y la estrategia de presentación de productos."
+    ],
+    tags: ["Live Streaming", "TikTok Console", "TikTok Studio", "E-commerce"]
+  },
   {
     title: "vsPoke",
     company: "Proyecto Personal",
@@ -199,7 +222,9 @@ const CERTS = [
             <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">SQL</span>
             <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Linux / Bash</span>
             <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Git & GitHub</span>
-            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">SoapUI</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Angular</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Java</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Node.js</span>
           </div>
         </div>
 
@@ -223,6 +248,37 @@ const CERTS = [
             <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Figma</span>
           </div>
         </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 transition-colors">
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+            </svg>
+            IA & Creación Digital
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Antigravity</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">OpenCode</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Claude</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">Gemini</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">ChatGPT</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-900/50 border border-slate-800 hover:border-purple-500/30 transition-colors">
+          <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+            </svg>
+            Contenido & Video
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">OBS</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">CapCut</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">TikTok</span>
+            <span class="px-3 py-1 bg-purple-900/30 text-purple-300 rounded-lg text-sm border border-purple-500/20">TikTok Studio</span>
+          </div>
+        </div>
     </div>
   </section>
 
@@ -234,12 +290,27 @@ const CERTS = [
           
           <div class="flex flex-col md:flex-row justify-between mb-4 gap-2">
             <h3 class="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">{project.title}</h3>
-            <span class="text-slate-500 font-mono text-sm">{project.company}</span>
+            <div class="flex flex-col md:items-end gap-1">
+              <span class="text-slate-500 font-mono text-sm">{project.company}</span>
+              {(project.date || project.location) && (
+                <span class="text-slate-500 font-mono text-xs">
+                  {project.date}{project.date && project.location ? " · " : ""}{project.location}
+                </span>
+              )}
+            </div>
           </div>
 
-          <p class="text-slate-400 leading-relaxed mb-6">
-            {project.description}
-          </p>
+          {project.bullets ? (
+            <ul class="list-disc pl-5 space-y-2 text-slate-400 leading-relaxed mb-6">
+              {project.bullets.map(bullet => (
+                <li>{bullet}</li>
+              ))}
+            </ul>
+          ) : (
+            <p class="text-slate-400 leading-relaxed mb-6">
+              {project.description}
+            </p>
+          )}
 
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 border-t border-slate-800/50 pt-4">
             
